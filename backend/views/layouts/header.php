@@ -4,6 +4,9 @@ use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+
+$directoryAsset2 = Yii::$app->assetManager->getPublishedUrl(
+'@backend/views/myasset/');
 ?>
 
 <header class="main-header">
@@ -47,14 +50,14 @@ use yii\helpers\Url;
 
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= Url::to(['/staff/staff/image']) ?>" class="user-image" alt="User Image"/>
+                        <img src="<?=$directoryAsset2 ?>/img/user.png" class="user-image" alt="User Image"/>
                         <span class="hidden-xs"><?=Yii::$app->user->identity->fullname?></span>
                     </a>
 					
 					<ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= Url::to(['/staff/staff/image']) ?>" class="img-circle"
+                            <img src="<?=$directoryAsset2 ?>/img/user.png" class="img-circle"
                                  alt="User Image"/>
 
                             <p>

@@ -3,6 +3,9 @@ use common\models\Todo;
 use yii\helpers\Url;
 use backend\modules\jeb\models\Menu as JebMenu;
 
+$directoryAsset2 = Yii::$app->assetManager->getPublishedUrl(
+'@backend/views/myasset/');
+
 ?>
 <aside class="main-sidebar">
 
@@ -11,7 +14,7 @@ use backend\modules\jeb\models\Menu as JebMenu;
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= Url::to(['/staff/staff/image']) ?>" class="img-circle" alt="User Image"/>
+                <img src="<?=$directoryAsset2?>/img/user.png" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
                 <p>
