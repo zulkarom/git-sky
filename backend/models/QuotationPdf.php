@@ -36,7 +36,7 @@ class QuotationPdf
 		
 		
 
-		$this->pdf->Output('invoice.pdf', 'I');
+		$this->pdf->Output('quotation-'.$this->model->id .'.pdf', 'I');
 	}
 	
 	public function writeHeaderFooter(){
@@ -339,7 +339,7 @@ $this->pdf->writeHTML($tbl, true, false, false, false, '');
 		$this->pdf->SetCreator(PDF_CREATOR);
 		$this->pdf->SetAuthor('Administrator');
 		$this->pdf->SetTitle('SKYHINT DESIGN');
-		$this->pdf->SetSubject('INVOICE');
+		$this->pdf->SetSubject('QUOTATION');
 		$this->pdf->SetKeywords('');
 
 
