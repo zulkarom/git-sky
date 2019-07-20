@@ -14,7 +14,7 @@ use backend\models\QuotationPdf;
 /**
  * Site controller
  */
-class QrPubQuoteController extends Controller
+class QrQuoteController extends Controller
 {
     /**
      * @inheritdoc
