@@ -2,4 +2,4 @@
 deployment:
  tasks:
  - export DEPLOYPATH=/home/forclcom/myapp/
- - /bin/cp -R /home/confvall/repositories/git-sky $DEPLOYPATH
+ - /bin/cp -R /home/forclcom/repositories/git-sky $DEPLOYPATH
