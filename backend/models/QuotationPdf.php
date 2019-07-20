@@ -76,7 +76,7 @@ $this->pdf->write2DBarcode('http://skyhint.com/qr-pub-quote-' . $token, 'QRCODE,
 $this->pdf->setY($y);
 
 $html = '<table border="0">
-<tr><td width="'.$col1.'"><h2>INVOICE</h2></td>
+<tr><td width="'.$col1.'"><h2>QUOTATION</h2></td>
 <td width="'.$col2.'" align="right">
 <img width="160" src="images/skyhint.jpg" /><br />
 <b>Skyhint Design Enterprise</b><br />
@@ -242,7 +242,7 @@ $html .= '</td>
 </td>
 <td width="'.$col2.'" align="right">
 <b>QUOTATION NO.</b><br />
-QUO'.$this->model->id .'<br />
+QTN'.$this->model->id .'<br />
 <b>DATE</b><br />
 '.date('d M Y', strtotime($this->model->quote_date)) .'<br />
 <b>VALID UNTIL</b><br />
@@ -307,7 +307,7 @@ if($note_arr){
 	$html .= '<table border="0">';
 	$i = 1;
 	foreach($note_arr as $n){
-		$html .= '<tr><td width="3%">'.$i.'. </td><td>' . $n . '</td></tr>';
+		$html .= '<tr><td width="4%">'.$i.'. </td><td width="65%">' . $n . '</td></tr>';
 	$i++;
 	}
 	$html .= '</table>';
@@ -315,8 +315,7 @@ if($note_arr){
 
 $html .= '</td>
 <td width="'.$col2.'" align="right">
-<br /><br /><b>ISSUED BY</b><br /><br />
-'.$this->model->createdBy->fullname .'<br />
+<br /><br /><b>ISSUED BY</b><br />
 Skyhint Design Enterprise<br />
  <a href="mailto:biz@skyhint.com">biz@skyhint.com</a>
 </td>
@@ -353,7 +352,7 @@ $this->pdf->writeHTML($tbl, true, false, false, false, '');
 		$this->pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 		// set margins
-		$this->pdf->SetMargins(25, 10, PDF_MARGIN_RIGHT);
+		$this->pdf->SetMargins(20, 10, PDF_MARGIN_RIGHT);
 		//$this->pdf->SetMargins(0, 0, 0);
 		$this->pdf->SetHeaderMargin(10);
 		//$this->pdf->SetHeaderMargin(0);

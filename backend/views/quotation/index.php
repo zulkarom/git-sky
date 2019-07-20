@@ -25,12 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 			'summary',
-            'quote_date',
-            'valid_until',
-            'client_id',
+            'quote_date:date',
 			
             ['class' => 'yii\grid\ActionColumn',
-                 'contentOptions' => ['style' => 'width: 8.7%'],
+                 'contentOptions' => ['style' => 'width: 18.7%'],
                 'template' => '{pdf} {update}',
 				//'format' => 'raw',
                 //'visible' => false,
