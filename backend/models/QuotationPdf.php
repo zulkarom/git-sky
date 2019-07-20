@@ -72,7 +72,7 @@ $style = array(
 );
 $token = $this->model->token;
 $y = $this->pdf->getY();
-$this->pdf->write2DBarcode('http://skyhint.com/qr-pub-' . $token, 'QRCODE,Q', 130, 8.5, 18, 18, $style, 'N');
+$this->pdf->write2DBarcode('http://skyhint.com/qr-pub-quote-' . $token, 'QRCODE,Q', 130, 8.5, 18, 18, $style, 'N');
 $this->pdf->setY($y);
 
 $html = '<table border="0">
