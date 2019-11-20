@@ -72,7 +72,7 @@ $style = array(
 );
 $token = $this->model->token;
 $y = $this->pdf->getY();
-$this->pdf->write2DBarcode('http://skyhint.com/qr-pub-' . $token, 'QRCODE,Q', 130, 8.5, 18, 18, $style, 'N');
+$this->pdf->write2DBarcode('https://skyhint.com/qr-pub-' . $token, 'QRCODE,Q', 130, 8.5, 18, 18, $style, 'N');
 $this->pdf->setY($y);
 
 $html = '<table border="0">
@@ -84,7 +84,7 @@ $html = '<table border="0">
 PT1068 Kg Telok Kemunting<br />
 Pauh Sembilan Bachok 16020<br />
 Kelantan
-<a href="http://skyhint.com" target="_blank">http://skyhint.com</a>
+<a href="https://skyhint.com" target="_blank">https://skyhint.com</a>
 
 </td></tr>
 
