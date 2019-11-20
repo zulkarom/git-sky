@@ -24,13 +24,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+			'client_id',
 			'summary',
             'invoice_date',
             'due_date',
-            'client_id',
+            
 			
             ['class' => 'yii\grid\ActionColumn',
-                 'contentOptions' => ['style' => 'width: 8.7%'],
+                 'contentOptions' => ['style' => 'width: 15.7%'],
                 'template' => '{pdf} {update}',
 				//'format' => 'raw',
                 //'visible' => false,
@@ -39,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a('<span class="glyphicon glyphicon-file"></span> PDF',['/invoice/pdf', 'id' => $model->id],['class'=>'btn btn-danger btn-sm', 'target' => '_blank']);
                     },
 					'update'=>function ($url, $model) {
-                        return Html::a('<span class="glyphicon glyphicon-pencil"></span> UPDATE',['question-prime/update/', 'id' => $model->id],['class'=>'btn btn-warning btn-sm']);
+                        return Html::a('<span class="glyphicon glyphicon-pencil"></span> UPDATE',['update', 'id' => $model->id],['class'=>'btn btn-warning btn-sm']);
                     },
                 ],
             

@@ -140,8 +140,6 @@ if($model->id){
 ]);
 
 
-<?php 
-//echo $model->due_date;
 if($model->id){
 	echo Form::input($model, 'due_date', ['date' => true, 'size'=>3,'labelsize'=>2, 'layout' => 'nogroup']);
 }else{
