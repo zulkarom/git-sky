@@ -11,6 +11,8 @@ class SecurityController extends BaseSecurityController
    public function actionLogin()
     {
 		//$this->layout = "//main-login";
+		//$this->redirect('index');
+		
 		
 		if (!\Yii::$app->user->isGuest) {
             $this->goHome();
