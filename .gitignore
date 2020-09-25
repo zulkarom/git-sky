@@ -18,6 +18,9 @@ nbproject
 Thumbs.db
 
 # composer vendor dir
+/composer.json
+/composer.lock
+
 /vendor
 
 # composer itself is not needed

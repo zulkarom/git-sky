@@ -35,7 +35,6 @@
 		"limion/yii2-jquery-fileupload-widget": "~1.0",
 		"kartik-v/yii2-detail-view": "@dev",
 		"glitchit/ds-yii2-tcpdf": "^1.0",
-		"mpdf/mpdf": "@dev",
 		"kartik-v/yii2-checkbox-x": "@dev",
 		"nterms/yii2-mailqueue": "*",
 		"2amigos/yii2-chartjs-widget": "~2.0",
@@ -50,7 +49,10 @@
 		"codeception/verify" : "~0.3.1"
 	},
 	"config" : {
-		"process-timeout" : 1800
+		"process-timeout" : 1800,
+		"platform": {
+        "php": "7.3"
+    }
 	},
 	"repositories" : [{
 			"type" : "composer",
