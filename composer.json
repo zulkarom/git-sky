@@ -20,7 +20,7 @@
 	"minimum-stability" : "stable",
 	"require" : {
 		"php" : ">=5.4.0",
-		"yiisoft/yii2" : "~2.0.6",
+		"yiisoft/yii2" : "~2.0.38",
 		"yiisoft/yii2-bootstrap" : "~2.0.0",
 		"yiisoft/yii2-swiftmailer" : "~2.0.0 || ~2.1.0",
 		"dmstr/yii2-adminlte-asset" : "^2.1",
@@ -51,7 +51,7 @@
 	"config" : {
 		"process-timeout" : 1800,
 		"platform": {
-        "php": "7.3"
+        "php": "7.1"
     }
 	},
 	"repositories" : [{

@@ -318,7 +318,7 @@ $html .= '</td>
 <br /><br /><b>ISSUED BY</b><br /><br />
 '.$this->model->createdBy->fullname .'<br />
 Skyhint Design Enterprise<br />
- <a href="mailto:biz@skyhint.com">biz@skyhint.com</a>
+biz@skyhint.com
 </td>
 
 </tr>

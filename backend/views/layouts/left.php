@@ -50,6 +50,8 @@ $directoryAsset2 = Yii::$app->assetManager->getPublishedUrl(
                 'items' => [
                     ['label' => 'Main Menu', 'options' => ['class' => 'header']],
 					
+					['label' => 'Dashboard', 'icon' => 'home', 'url' => ['/']],
+					
 					[
                         'label' => 'Clients',
                         'icon' => 'user',
@@ -124,6 +126,8 @@ $directoryAsset2 = Yii::$app->assetManager->getPublishedUrl(
 
                         ],
                     ],
+					
+					['label' => 'Demo ToyyibPay', 'icon' => 'code', 'url' => ['/demo-toyyib']],
 					
 					//['label' => 'Change Password', 'icon' => 'lock', 'url' => ['/user/change-password']],
 					

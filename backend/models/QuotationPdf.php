@@ -317,7 +317,7 @@ $html .= '</td>
 <td width="'.$col2.'" align="right">
 <br /><br /><b>ISSUED BY</b><br />
 Skyhint Design Enterprise<br />
- <a href="mailto:biz@skyhint.com">biz@skyhint.com</a>
+biz@skyhint.com
 </td>
 
 </tr>
