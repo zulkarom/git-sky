@@ -65,11 +65,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
 		
-		//return $this->redirect(['jeb/submission']);
-		
         return $this->render('index', [
 
 		'customer' => 33
+		
 		]); 
     }
 
