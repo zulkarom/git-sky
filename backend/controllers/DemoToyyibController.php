@@ -33,7 +33,6 @@ class DemoToyyibController extends Controller
 						'roles' => ['?']
                     ],
                     [
-						'actions' => ['index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
