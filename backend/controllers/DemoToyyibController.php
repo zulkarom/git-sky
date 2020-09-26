@@ -186,7 +186,7 @@ class DemoToyyibController extends Controller
 		  curl_close($curl);
 		  $obj = json_decode($result);
 		  
-		 // print_r($obj[0]);die();
+		 print_r($obj);die();
 		  
 			if($obj){
 				//echo $obj->BillCode;die();
