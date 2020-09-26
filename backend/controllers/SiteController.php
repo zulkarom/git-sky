@@ -184,7 +184,7 @@ class SiteController extends Controller
 		$arr = array();
 		$arr['billcode'] = $billcode;
 		$arr['order_id'] = $order_id;
-		$arr['staff_id'] = $status_id;
+		$arr['status_id'] = $status_id;
 		$arr['datetime'] = date('y-m-d h:m:s');
 		$arr['ip_address'] = $_SERVER['REMOTE_ADDR'];
 		
