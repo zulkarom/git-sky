@@ -207,7 +207,7 @@ class SiteController extends Controller
 				echo 'no billcode supplied!';
 			}
 		}else{
-			echo 'something wrong with the process!';
+			Yii::$app->session->addFlash('info', "Sorry, your payment is not successful.");
 		}
 		return $this->redirect(['demo-toyyib/index']);
 	}
