@@ -38,8 +38,13 @@ class DemoToyyib extends \yii\db\ActiveRecord
             [['order_id', 'billTo', 'billEmail', 'billPhone'], 'required'],
 			
             [['order_id', 'return_status'], 'integer'],
+			
+			[['billAmount'], 'number'],
+			
             [['return_response', 'callback_response'], 'string'],
+			
             [['billcode'], 'string', 'max' => 150],
+			
             [['billName', 'billDescription', 'billTo', 'billEmail', 'billPhone'], 'string', 'max' => 100],
         ];
     }

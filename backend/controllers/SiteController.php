@@ -10,6 +10,7 @@ use common\models\Product;
 use backend\models\Customer;
 use backend\modules\staff\models\Staff;
 use common\models\User;
+use backend\models\DemoToyyib;
 
 /**
  * Site controller
@@ -26,7 +27,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'login-portal', 'error'],
+                        'actions' => ['login', 'login-portal', 'error', 'callback-url', 'return-url'],
                         'allow' => true,
                     ],
                     [
@@ -40,6 +41,7 @@ class SiteController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
+					'callback-url' => ['post']
                 ],
             ],
         ];
@@ -56,6 +58,17 @@ class SiteController extends Controller
             ],
         ];
     }
+	
+	public function beforeAction($action)
+	{            
+		if ($action->id == 'callback-url' or $action->id == 'return-url') {
+			$this->enableCsrfValidation = false;
+		}
+
+		return parent::beforeAction($action);
+	}
+	
+	
 
     /**
      * Displays homepage.
@@ -134,7 +147,69 @@ class SiteController extends Controller
         if(Yii::$app->user->logout()){
 			return $this->goHome();
 		}
-
-        
     }
+	
+	public function actionCallbackUrl(){
+		
+		
+		$arr= array();
+		$arr['ip_address'] = $_SERVER['REMOTE_ADDR'];
+		if(Yii::$app->request->post()){
+			$billcode = Yii::$app->request->post('billcode');
+			$order_id = Yii::$app->request->post('order_id');
+			$model = DemoToyyib::findOne(['billcode' => $billcode, 'order_id' => $order_id]);
+			if($model){
+				$post = json_encode(Yii::$app->request->post());
+				$arr['post'] = $post;
+				$arr['datetime'] = date('y-m-d h:m:s');
+				$model->callback_response = json_encode($arr);
+				if($model->save()){
+					Yii::$app->response->statusCode = 200;
+					Yii::$app->response->content = 'OK';
+				}
+			}
+			
+			
+		}
+		
+		
+	}
+	
+	public function actionReturnUrl(){
+		$get = Yii::$app->getRequest();
+		$status_id = $get->getQueryParam('status_id'); //Payment status. 1= success, 2=pending, 3=fail
+		$billcode = $get->getQueryParam('billcode');
+		$order_id = $get->getQueryParam('order_id');
+		
+		$arr = array();
+		$arr['billcode'] = $billcode;
+		$arr['order_id'] = $order_id;
+		$arr['staff_id'] = $status_id;
+		$arr['datetime'] = date('y-m-d h:m:s');
+		$arr['ip_address'] = $_SERVER['REMOTE_ADDR'];
+		
+		
+		if($status_id == 1){
+			if($billcode){
+				$model = DemoToyyib::findOne(['billcode' => $billcode, 'order_id' => $order_id]);
+				if($model){
+					$model->return_status = 1;
+					$model->return_response = json_encode($arr);
+					if($model->save()){
+						//echo 'Congratulation, your payment is successful.';
+						Yii::$app->session->addFlash('success', "Congratulation, your payment is successful.");
+						
+					}
+				}else{
+					echo 'billcode not exist!';
+				}
+			}else{
+				echo 'no billcode supplied!';
+			}
+		}else{
+			echo 'something wrong with the process!';
+		}
+		return $this->redirect(['demo-toyyib/index']);
+	}
+
 }

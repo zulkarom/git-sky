@@ -28,7 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'billName',
             //'billDescription',
             'billTo',
-            'billEmail:email',
+			'return_status',
+            //'billEmail:email',
             'billPhone',
             //'return_response:ntext',
             //'callback_response:ntext',
@@ -41,11 +42,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'visible' => false,
                 'buttons'=>[
                     'update'=>function ($url, $model) {
-                        return Html::a('<span class="glyphicon glyphicon-pencil"></span> UPDATE',['update/', 'id' => $model->id],['class'=>'btn btn-warning btn-sm']);
+                        return Html::a('<span class="glyphicon glyphicon-pencil"></span> UPDATE',['demo-toyyib/update/', 'id' => $model->id],['class'=>'btn btn-warning btn-sm']);
                     },
 					
                     'pay'=>function ($url, $model) {
-                        return Html::a('<span class="glyphicon glyphicon-dollar"></span> PAY',['update/', 'id' => $model->id],['class'=>'btn btn-warning btn-sm']);
+                        return Html::a('<span class="glyphicon glyphicon-dollar"></span> PAY',['demo-toyyib/create-bill-page/', 'id' => $model->id],['class'=>'btn btn-warning btn-sm']);
                     },
 					
 					

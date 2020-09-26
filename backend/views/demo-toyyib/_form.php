@@ -19,6 +19,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'return_status')->textInput() ?>
 
     <?= $form->field($model, 'billName')->textInput(['maxlength' => true]) ?>
+	
+	<?= $form->field($model, 'billAmount')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'billDescription')->textInput(['maxlength' => true]) ?>
 
