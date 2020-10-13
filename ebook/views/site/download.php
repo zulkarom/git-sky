@@ -45,7 +45,7 @@ This book benefits students as guidance to introduction to accounting. Non-accou
 <div class="site-index">
 <h3>Thank you for payment</h3>
     
-	<a href="<?=Url::to(['site/download-file', 'transaction' => $transaction])?>" class="btn btn-primary">DOWNLOAD THE BOOK HERE</a>
+	<a href="<?=Url::to(['site/download-file'])?>" class="btn btn-primary">DOWNLOAD THE BOOK HERE</a>
 
 </div><!-- site-index -->
 

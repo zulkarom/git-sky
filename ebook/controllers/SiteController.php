@@ -93,7 +93,7 @@ class SiteController extends Controller
         
     }
 	
-	function collect_file($url){
+	public function collect_file($url){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -107,7 +107,7 @@ class SiteController extends Controller
         return($result);
     }
 
-    function write_to_file($text,$new_filename){
+    public function write_to_file($text,$new_filename){
         $fp = fopen($new_filename, 'w');
         fwrite($fp, $text);
         fclose($fp);
@@ -116,14 +116,33 @@ class SiteController extends Controller
 
   
 	
-	public function actionDownloadFile($transaction)
+	public function actionDownloadFile()
     {
-		$order = $this->findSuccessOrder($transaction);
+		$url = "https://ebook.skyhint.com/download/filef3tgswq34234.pdf";
+
+
+		//$order = $this->findSuccessOrder($transaction);
 		
 		$new_file_name = "basic_accounting_apt1043.pdf";
-		$url = "https://ebook.skyhint.com/download/filef3tgswq34234.pdf";
-		$temp_file_contents = collect_file($url);
-		write_to_file($temp_file_contents,$new_file_name);
+		
+		$temp_file_contents = $this->collect_file($url);
+		$this->write_to_file($temp_file_contents,$new_file_name);
+		
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename='.basename($new_file_name));
+		header('Content-Transfer-Encoding: binary');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($new_file_name));
+		ob_clean();
+		flush();
+		readfile($new_file_name);
+		
+		unlink($new_file_name);
+
+		exit;
         
     }
 	
