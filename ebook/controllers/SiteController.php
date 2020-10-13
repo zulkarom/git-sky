@@ -121,9 +121,9 @@ class SiteController extends Controller
 		$order = $this->findSuccessOrder($transaction);
 		
 		$new_file_name = "basic_accounting_apt1043.pdf";
-		$url = "https://ebook.skyhint.com/download/file.f3tgswq34234.pdf";
+		$url = "https://ebook.skyhint.com/download/filef3tgswq34234.pdf";
 		$temp_file_contents = collect_file($url);
-		write_to_file($temp_file_contents,$new_file_name)
+		write_to_file($temp_file_contents,$new_file_name);
         
     }
 	
