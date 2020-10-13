@@ -55,6 +55,8 @@ This book benefits students as guidance to introduction to accounting. Non-accou
     
         <div class="form-group">
             <?= Html::submitButton('PURCHASE NOW', ['class' => 'btn btn-primary']) ?>
+			<br /><br />
+			* FPX Online Banking <br />(ToyyibPay powered by ANSI SYSTEM)
         </div>
     <?php ActiveForm::end(); ?>
 
