@@ -19,7 +19,7 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@ebook/views/myasset
 			<div class="col-lg-1"></div>
 			
 			<div class="col-lg-10">
-			<h3>Thank you for your purchase</h3>
+			
 			
 			<div class="row">
 <div class="col-md-7">
@@ -43,9 +43,9 @@ This book benefits students as guidance to introduction to accounting. Non-accou
 <div class="col-md-5">
 
 <div class="site-index">
-
+<h3>Thank you for payment</h3>
     
-	<a href="" class="btn btn-primary">DOWNLOAD HERE</a>
+	<a href="<?=Url::to(['site/download-file', 'transaction' => $transaction])?>" class="btn btn-primary">DOWNLOAD THE BOOK HERE</a>
 
 </div><!-- site-index -->
 
