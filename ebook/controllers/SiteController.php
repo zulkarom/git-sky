@@ -421,6 +421,8 @@ class SiteController extends Controller
 			return $this->redirect(['site/failed']);
 		}
 		
+		exit;
+		
 	}
 
 }
