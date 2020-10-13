@@ -80,7 +80,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
 		$this->layout = 'landing-page';
-		return $this->render('index');
+		return $this->render('landing');
         
     }
 	
@@ -126,6 +126,7 @@ class SiteController extends Controller
 			
 			$model->transaction_id = $transaction_id;
 			$model->billAmount = $book->price;
+			$model->book_id = $book->id;
 			$model->billName = $strBill;
 			$model->billDescription = $strDesc;
 			$model->status = 'initiate';

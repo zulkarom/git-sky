@@ -64,7 +64,7 @@ class BookOrder extends \yii\db\ActiveRecord
             'billName' => 'Bill Name',
             'billDescription' => 'Bill Description',
             'billAmount' => 'Bill Amount',
-            'billTo' => 'Student\'s Name',
+            'billTo' => 'Student Name',
             'billEmail' => 'Email',
             'billPhone' => 'Phone',
 			'student_id' => 'Student Matric Number',
