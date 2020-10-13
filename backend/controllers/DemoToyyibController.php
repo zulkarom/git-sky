@@ -177,16 +177,16 @@ class DemoToyyibController extends Controller
  */
 		  $curl = curl_init();
 		  curl_setopt($curl, CURLOPT_POST, 1);
-		  curl_setopt($curl, CURLOPT_URL, 'https://dev.toyyibpay.com/index.php/api/createBill');  
+		  curl_setopt($curl, CURLOPT_URL, 'https://skyhint.com/api/toyyib.php');  
 		  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		  curl_setopt($curl, CURLOPT_POSTFIELDS, $some_data);
 
 		  $result = curl_exec($curl);
-		  $info = curl_getinfo($curl);  
+		  $info = curl_getinfo($curl , CURLINFO_HTTP_CODE);   
 		  curl_close($curl);
 		  $obj = json_decode($result);
 		  
-		 //print_r($obj);die();
+		 echo $info . $result;die();
 		  
 			if($obj){
 				//echo $obj->BillCode;die();
