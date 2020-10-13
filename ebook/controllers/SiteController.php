@@ -211,8 +211,8 @@ class SiteController extends Controller
 		
 		
 		  $some_data = array(
-			'userSecretKey'=> 'v1gc99hq-vfih-91gm-gu1s-46xxkrzxdehu',
-			'categoryCode'=> 'kqr7djwa', //dev category
+			'userSecretKey'=> 'rbrywmkm-u92f-8qfw-jqlw-7mq6q6pk2lp0',
+			'categoryCode'=> 'm1gr3co6', //dev category
 			'billName'=> $model->billName,
 			'billDescription'=> $model->billDescription,
 			'billPriceSetting'=> 1, //Put 1 if the bill has fix amount, put 0 if dynamic amount.
@@ -236,7 +236,7 @@ class SiteController extends Controller
 
 		  $curl = curl_init();
 		  curl_setopt($curl, CURLOPT_POST, 1);
-		  curl_setopt($curl, CURLOPT_URL, 'https://dev.toyyibpay.com/index.php/api/createBill');  
+		  curl_setopt($curl, CURLOPT_URL, 'https://toyyibpay.com/index.php/api/createBill');  
 		  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		  curl_setopt($curl, CURLOPT_POSTFIELDS, $some_data);
 
@@ -260,7 +260,7 @@ class SiteController extends Controller
 
 					if($model->save()){
 						curl_close($curl);
-						header('location:https://dev.toyyibpay.com/'.$code);
+						header('location:https://toyyibpay.com/'.$code);
 						exit();
 					}else{
 						echo 'Sorry, there is problem to store bill code!';
