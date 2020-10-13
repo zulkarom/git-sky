@@ -163,8 +163,8 @@ class SiteController extends Controller
 			'billPriceSetting'=> 1, //Put 1 if the bill has fix amount, put 0 if dynamic amount.
 			'billPayorInfo'=>1,
 			'billAmount'=> $amount,
-			'billReturnUrl'=>'https://ebook.skyhint.com/site/return'. $model->id,
-			'billCallbackUrl'=>'https://ebook.skyhint.com/site/callback'. $model->id,
+			'billReturnUrl'=>'https://ebook.skyhint.com/site/return',
+			'billCallbackUrl'=>'https://ebook.skyhint.com/site/callback',
 			'billExternalReferenceNo' => $model->transaction_id,
 			'billTo'=> $model->billTo,
 			'billEmail'=> $model->billEmail,
