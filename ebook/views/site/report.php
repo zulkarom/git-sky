@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php ActiveForm::end(); ?>
 
 
-    <?= GridView::widget([
+  <div class="table-responsive">  <?= GridView::widget([
         'dataProvider' => $dataProvider,
        // 'filterModel' => $searchModel,
         'columns' => [
@@ -45,7 +45,10 @@ $this->params['breadcrumbs'][] = $this->title;
 			'payment_created:date',
 			
             ],
-    ]); ?>
+    ]); ?></div>
+	
+	
+	
 </div></div></div>
 
 <?php 
