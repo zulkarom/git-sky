@@ -85,14 +85,17 @@ class SiteController extends Controller
         
     }
 
-public function actionReport()
+	public function actionReport($blink)
     {
         $searchModel = new BookOrderSearch();
+		$searchModel->blink = $blink;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+		$model = $this->findBook($blink);
 
         return $this->render('report', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+			'model' => $model
         ]);
     }
 	

@@ -40,11 +40,13 @@ phpunit.phar
 # config
 /frontend/config
 /backend/config
+/ebook/config
 /commoon/
 
 # web
 /backend/web
 /frontend/web
+/ebook/web
 
 #uploaded
 

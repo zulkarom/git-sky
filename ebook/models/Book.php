@@ -16,6 +16,7 @@ use Yii;
  */
 class Book extends \yii\db\ActiveRecord
 {
+	public $group_name;
     /**
      * {@inheritdoc}
      */
@@ -52,4 +53,15 @@ class Book extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
         ];
     }
+	
+	public function groupList(){
+		return [
+			'L1' => 'L1 - DR. AINON @ JAMILAH BINTI RAMLI',
+			'L2' => 'L2 - DR. NOORUL AZWIN BINTI MD NASIR',
+			'L3' => 'L3 - EN. ZUL KARAMI BIN CHE MUSA',
+			'L4' => 'L4 - DR. AINON @ JAMILAH BINTI RAMLI',
+			'K1' => 'K1 - DR. NADZIRAH BT MOHD SAID'
+			
+		];
+	}
 }

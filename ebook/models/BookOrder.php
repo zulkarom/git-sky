@@ -71,6 +71,7 @@ class BookOrder extends \yii\db\ActiveRecord
             'return_response' => 'Return Response',
             'callback_response' => 'Callback Response',
             'group_name' => 'Group Name',
+			'payment_created' => 'Date',
         ];
     }
 	

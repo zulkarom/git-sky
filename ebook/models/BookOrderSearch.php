@@ -10,6 +10,7 @@ use yii\data\ActiveDataProvider;
  */
 class BookOrderSearch extends BookOrder
 {
+	public $blink;
     /**
      * {@inheritdoc}
      */
@@ -39,12 +40,19 @@ class BookOrderSearch extends BookOrder
      */
     public function search($params)
     {
-        $query = BookOrder::find();
+        $query = BookOrder::find()
+		->joinWith('book')
+		->where(['book_order.status' => 'success', 'book.blink' => $this->blink])
+		;
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+			'pagination' => [
+                'pageSize' => 150,
+            ],
+
         ]);
 
         $this->load($params);
