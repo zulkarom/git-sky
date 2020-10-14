@@ -80,7 +80,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
 		$this->layout = 'landing-page';
-		return $this->render('landing');
+		return $this->render('landing'); 
         
     }
 	

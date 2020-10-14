@@ -25,7 +25,7 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@ebook/views/myasset
 			<div class="col-md-5">
 
 <div class="site-index">
-<h3>Thank you <?=$order->billTo;?> for payment</h3>
+<h3>Thank you <?=$order->billTo;?> for the payment</h3>
     <br />
 	<a href="<?=Url::to(['site/download-file'])?>" class="btn btn-primary">DOWNLOAD THE BOOK HERE</a>
 	
