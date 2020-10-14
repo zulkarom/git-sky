@@ -31,7 +31,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['signup', 'index', 'login', 'staff-login', 'download', 'download-file', 'book', 'failed','return', 'callback', 'claim'],
+                        'actions' => ['signup', 'index', 'login', 'staff-login', 'download', 'download-file', 'book', 'failed','return', 'callback', 'claim', 'report'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -82,6 +82,17 @@ class SiteController extends Controller
 		$this->layout = 'landing-page';
 		return $this->render('landing'); 
         
+    }
+
+public function actionReport()
+    {
+        $searchModel = new BookOrderSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 	
 	public function actionDownload($transaction)
