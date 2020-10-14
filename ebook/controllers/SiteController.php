@@ -87,7 +87,7 @@ class SiteController extends Controller
 	public function actionDownload($transaction)
     {
 		$order = $this->findSuccessOrder($transaction);
-		return $this->render('download', compact($transaction));
+		return $this->render('download', compact('order'));
 		
 		
         
