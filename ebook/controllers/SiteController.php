@@ -114,6 +114,7 @@ class SiteController extends Controller
 			exit;
 		}else{
 			echo 'No successful transaction';
+			exit;
 		}
 	}
 
