@@ -59,6 +59,25 @@ This book benefits students as guidance to introduction to accounting. Non-accou
 			* FPX Online Banking <br />(ToyyibPay powered by ANSI SYSTEM)
         </div>
     <?php ActiveForm::end(); ?>
+	
+	
+	<br /><br />
+	
+	
+	<h4>Claim your book</h3>
+	* In case you missed the download page due to connection problem, put in your matric number and press submit.
+	<form action="<?=Url::to(['site/claim'])?>" method="get">
+	<div class="form-group field-bookorder-student_id">
+<label class="control-label" for="bookorder-student_id">Student Matric Number</label>
+<input type="text" id="bookorder-student_id" class="form-control" name="student" required>
+</div>
+<div class="form-group">
+            <button type="submit" class="btn btn-warning">SUBMIT</button>			<br><br>
+        </div>
+
+
+	
+	
 
 </div><!-- site-index -->
 

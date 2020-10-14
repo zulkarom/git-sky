@@ -31,7 +31,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['signup', 'index', 'login', 'staff-login', 'download', 'download-file', 'book', 'failed','return', 'callback'],
+                        'actions' => ['signup', 'index', 'login', 'staff-login', 'download', 'download-file', 'book', 'failed','return', 'callback', 'claim'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -106,6 +106,16 @@ class SiteController extends Controller
         curl_close($ch);
         return($result);
     }
+	
+	public function actionClaim($student){
+		$tran = BookOrder::find()->where(['student_id' => $student, 'status' => 'success'])->one();
+		if($tran){
+			header('location:https://ebook.skyhint.com/site/download?transaction='.$tran->transaction_id);
+			exit;
+		}else{
+			echo 'No successful transaction';
+		}
+	}
 
     public function write_to_file($text,$new_filename){
         $fp = fopen($new_filename, 'w');
