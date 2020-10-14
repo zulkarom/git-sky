@@ -16,8 +16,8 @@ class BookOrderSearch extends BookOrder
     public function rules()
     {
         return [
-            [['id', 'order_id', 'return_status'], 'integer'],
-            [['billcode', 'billName', 'billDescription', 'billTo', 'billEmail', 'billPhone', 'return_response', 'callback_response'], 'safe'],
+            [['group_name'], 'string'],
+            
         ];
     }
 
@@ -58,13 +58,11 @@ class BookOrderSearch extends BookOrder
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'order_id' => $this->order_id,
-            'return_status' => $this->return_status,
+            'group_name' => $this->group_name,
+          
         ]);
 
-        $query->andFilterWhere(['like', 'billcode', $this->billcode])
-            
-            ->andFilterWhere(['like', 'callback_response', $this->callback_response]);
+        
 
         return $dataProvider;
     }
