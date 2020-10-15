@@ -18,6 +18,7 @@ class BookOrderSearch extends BookOrder
     {
         return [
             [['group_name'], 'string'],
+			[['settlement'], 'integer'],
             
         ];
     }
@@ -67,6 +68,7 @@ class BookOrderSearch extends BookOrder
         $query->andFilterWhere([
             'id' => $this->id,
             'group_name' => $this->group_name,
+			'settlement' => $this->settlement,
           
         ]);
 
