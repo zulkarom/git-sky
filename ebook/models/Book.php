@@ -61,8 +61,8 @@ class Book extends \yii\db\ActiveRecord
 			'L3' => 'L3 - EN. ZUL KARAMI BIN CHE MUSA',
 			'L4' => 'L4 - DR. AINON @ JAMILAH BINTI RAMLI',
 			'K1' => 'K1 - DR. NADZIRAH BT MOHD SAID',
-			'L1.FHPK' => 'DR. NORMAIZATUL AKMA SAIDI',
-			'L2.FHPK' => 'DR. NORMAIZATUL AKMA SAIDI',
+			'L1.FHPK' => 'L1.FHPK - DR. NORMAIZATUL AKMA SAIDI',
+			'L2.FHPK' => 'L2.FHPK - DR. NORMAIZATUL AKMA SAIDI',
 			
 		];
 	}
