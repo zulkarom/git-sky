@@ -56,7 +56,7 @@ class Book extends \yii\db\ActiveRecord
 	
 	public function groupList(){
 		return [
-			'FHPK' => 'Dr. Normaizatul Akma Binti Saidi'
+			'FHPK' => 'FHPK'
 			
 		];
 	}
