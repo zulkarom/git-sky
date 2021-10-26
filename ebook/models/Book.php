@@ -56,10 +56,7 @@ class Book extends \yii\db\ActiveRecord
 	
 	public function groupList(){
 		return [
-			'L1' => 'L1 - DR. AINON @ JAMILAH BINTI RAMLI',
-			'L2' => 'L2 - DR. AINON @ JAMILAH BINTI RAMLI',
-			'L3' => 'L3 - EN. ZUL KARAMI BIN CHE MUSA',
-			'L4' => 'L4 - DR. TAHIRAH BINTI ABDULLAH',
+			'FHPK' => 'Dr. Normaizatul Akma Binti Saidi'
 			
 		];
 	}
