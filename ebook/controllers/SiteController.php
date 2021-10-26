@@ -181,8 +181,8 @@ class SiteController extends Controller
 	
 	public function actionBook($blink)
     {
-		echo 'The page is closed. Please contact the book\'s owner at ainon@umk.edu.my for any inquiries. ';
-		die();
+		//echo 'The page is closed. Please contact the book\'s owner at ainon@umk.edu.my for any inquiries. ';
+		//die();
 		$book = $this->findBook($blink);
 		$model = new BookOrder;
 		$model->scenario = 'purchase';
