@@ -56,7 +56,8 @@ class Book extends \yii\db\ActiveRecord
 	
 	public function groupList(){
 		return [
-			'FHPK' => 'FHPK'
+			'FHPK' => 'FHPK',
+			'FKP' => 'FKP'
 			
 		];
 	}
